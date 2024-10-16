@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<custom-view-configurations>
+    <SelectQuery numofobjects="0" queryid="SelectQuery:queryid:EmployeeSalaryView" startindex="0">
+        <SelectTable tablealias="BHARATH_EMPLOYEE_CONTAINS_TEMPLATE" tablename="BHARATH_EMPLOYEE_CONTAINS_TEMPLATE">
+            <SelectColumn columnalias="EMPLOYEE_ID" columnindex="0" columnname="EMPLOYEE_ID"/>
+            <SelectColumn columnalias="EMP_NAME" columnindex="1" columnname="EMP_NAME"/>
+            <SortColumn ascending_order="true" columnalias="EMPLOYEE_ID" columnname="EMPLOYEE_ID" sortindex="0"/>
+        </SelectTable>
+        <SelectTable tablealias="BHARATH_EMP_DEPARTMENT_MAPPING_CONTAINS_TEMPLATE" tablename="BHARATH_EMP_DEPARTMENT_MAPPING_CONTAINS_TEMPLATE">
+            <JoinTable jointype="2" referencedtable="BHARATH_EMPLOYEE_CONTAINS_TEMPLATE">
+                <JoinColumns basetablecolumn="EMPLOYEE_ID" referencedtablecolumn="EMPLOYEE_ID"/>
+            </JoinTable>
+            <SelectColumn columnalias="DEPARTMENT_ID" columnindex="2" columnname="DEPARTMENT_ID"/>
+        </SelectTable>
+		<SelectTable tablealias="BHARATH_DEPARTMENT_CONTAINS_TEMPLATE" tablename="BHARATH_DEPARTMENT_CONTAINS_TEMPLATE">
+            <JoinTable jointype="2" referencedtable="BHARATH_EMP_DEPARTMENT_MAPPING_CONTAINS_TEMPLATE">
+                <JoinColumns basetablecolumn="DEPARTMENT_ID" referencedtablecolumn="DEPARTMENT_ID"/>
+            </JoinTable>
+            <SelectColumn columnalias="DEPARTMENT_NAME" columnindex="3" columnname="DEPARTMENT_NAME"/>
+        </SelectTable>
+        <Criteria criteriaid="Criteria:criteriaid:1" logicalrepresentation="1">
+            <RelationalCriteria relationalcriteriaid="1" tablealias="BHARATH_EMP_DEPARTMENT_MAPPING_CONTAINS_TEMPLATE" columnname="DEPARTMENT_ID" comparator="0" value="100"/>
+        </Criteria>
+        <CustomViewConfiguration cvid="CustomViewConfiguration:cvid:EmployeeDepartment100CV" cvname="EmployeeDepartment100CV"/>
+    </SelectQuery>
+</custom-view-configurations>
+

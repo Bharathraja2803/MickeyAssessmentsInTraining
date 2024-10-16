@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE data-dictionary SYSTEM "data-dictionary.dtd">
+<data-dictionary name="BharathReminderTaskXml">
+	<table createtable="true" name="bharath_remainder_xml_table" system="false" template="false">
+		<columns>
+			<column name="remainder_id">
+				<data-type>INTEGER</data-type>
+                <nullable>false</nullable>
+                <uniquevalue-generation>
+					<generator-name>bharath_remainder_xml_table.remainder_id</generator-name>
+                </uniquevalue-generation>
+			</column>
+            <column name="remainder_content">
+				<data-type>CHAR</data-type>
+				<max-size>1000</max-size>
+                <nullable>false</nullable>
+			</column>
+			<column name="remainder_execution_time">
+				<data-type>DATETIME</data-type>
+                <nullable>false</nullable>
+			</column>
+		</columns>
+		<primary-key name="bharath_remainder_xml_table_pk">
+			<primary-key-column>remainder_id</primary-key-column>
+		</primary-key>
+    </table>
+</data-dictionary>

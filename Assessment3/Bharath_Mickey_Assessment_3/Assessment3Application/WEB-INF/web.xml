@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
+  <display-name>MickeyAssessment3</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  <servlet>
+    <servlet-name>AddDepartmentServlet</servlet-name>
+    <servlet-class>com.bharath.training.servlet.adding_data_1.AddDepartmentServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AddDepartmentServlet</servlet-name>
+    <url-pattern>/AddDepartmentServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>AddNewEmployeeServlet</servlet-name>
+    <servlet-class>com.bharath.training.servlet.adding_data_1.AddNewEmployeeServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AddNewEmployeeServlet</servlet-name>
+    <url-pattern>/AddNewEmployeeServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>DeleteEmployeeHavingYahooMailServlet</servlet-name>
+    <servlet-class>com.bharath.training.servlet.deleting_the_employee_account_4.DeleteEmployeeHavingYahooMailServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DeleteEmployeeHavingYahooMailServlet</servlet-name>
+    <url-pattern>/DeleteEmployeeHavingYahooMailServlet</url-pattern>
+  </servlet-mapping>
+  
+</web-app>

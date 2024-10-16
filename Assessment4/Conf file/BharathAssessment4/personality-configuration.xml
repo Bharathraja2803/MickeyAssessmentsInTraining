@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!-- $Id: personality-configuration.xml,v 1.5 2005/06/10 06:18:14 vinod Exp $ -->
+<Personality-configuration>
+<DominantTableConfig DOMINANTTABLEID="BHARATH_EMPLOYEE" isindexed="false" nonindexlimit="31">
+
+<PersonalityConfiguration personalityid="PersonalityConfiguration:personalityid:1" personalityname="employeeDetails" dominanttableid="BHARATH_EMPLOYEE" modulename="BharathAssessment4" description="to get complete employee details">
+
+<ConstituentTable tableid="BHARATH_EMPLOYEE" mandatory="true" tableindex="0" />
+<ConstituentTable tableid="BHARATH_EMP_SALARYDETAILS" mandatory="true" tableindex="1" fkconstraint_id="BHARATH_EMP_SALARYDETAILS_FK"/>
+<ConstituentTable tableid="BHARATH_EMP_DEPARTMENT_MAPPING" mandatory="true" tableindex="2" fkconstraint_id="BHARATH_EMP_DEPARTMENT_MAPPING_FK2"/>
+</PersonalityConfiguration>
+
+
+<PersonalityConfiguration personalityid="PersonalityConfiguration:personalityid:2" personalityname="departmentDetails" dominanttableid="BHARATH_DEPARTMENT" modulename="BharathAssessment4" description="to get complete department details">
+
+<ConstituentTable tableid="BHARATH_DEPARTMENT" mandatory="true" tableindex="0" />
+<ConstituentTable tableid="BHARATH_EMP_DEPARTMENT_MAPPING" mandatory="true" tableindex="1" fkconstraint_id="BHARATH_EMP_DEPARTMENT_MAPPING_FK1"/>
+</PersonalityConfiguration>
+</DominantTableConfig>
+</Personality-configuration>

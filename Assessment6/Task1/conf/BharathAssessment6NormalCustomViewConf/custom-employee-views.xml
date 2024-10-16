@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<custom-view-configurations>
+    <SelectQuery numofobjects="0" queryid="SelectQuery:queryid:EmployeeNameAndDepartment" startindex="0">
+        <SelectTable tablealias="BHARATH_EMPLOYEE" tablename="BHARATH_EMPLOYEE">
+            <SelectColumn columnalias="EMPLOYEE_ID" columnindex="0" columnname="EMPLOYEE_ID"/>
+            <SelectColumn columnalias="EMP_NAME" columnindex="1" columnname="EMP_NAME"/>
+            <SortColumn ascending_order="true" columnalias="EMPLOYEE_ID" columnname="EMPLOYEE_ID" sortindex="0"/>
+        </SelectTable>
+        <SelectTable tablealias="BHARATH_EMP_DEPARTMENT_MAPPING" tablename="BHARATH_EMP_DEPARTMENT_MAPPING">
+            <JoinTable jointype="2" referencedtable="BHARATH_EMPLOYEE">
+                <JoinColumns basetablecolumn="EMPLOYEE_ID" referencedtablecolumn="EMPLOYEE_ID"/>
+            </JoinTable>
+            <SelectColumn columnalias="DEPARTMENT_ID" columnindex="2" columnname="DEPARTMENT_ID"/>
+            <SortColumn ascending_order="true" columnalias="DEPARTMENT_ID" columnname="DEPARTMENT_ID" sortindex="1"/>
+        </SelectTable>
+        <CustomViewConfiguration cvid="CustomViewConfiguration:cvid:EmployeeDepartmentCV" cvname="EmployeeDepartmentCV"/>
+    </SelectQuery>
+</custom-view-configurations>
+

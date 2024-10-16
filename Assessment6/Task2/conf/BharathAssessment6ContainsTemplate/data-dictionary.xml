@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE data-dictionary SYSTEM "data-dictionary.dtd">
+<data-dictionary name="BharathAssessment6ContainsTemplate">
+		<table createtable="true" name="BHARATH_EMPLOYEE_CONTAINS_TEMPLATE" system="false" template="false">
+		<columns>
+			<column name="EMPLOYEE_ID">
+				<data-type>INTEGER</data-type>
+                <nullable>false</nullable>
+                <uniquevalue-generation>
+					<generator-name>BHARATH_EMPLOYEE_CONTAINS_TEMPLATE.EMPLOYEE_ID</generator-name>
+                </uniquevalue-generation>
+			</column>
+            <column name="EMP_NAME">
+				<data-type>CHAR</data-type>
+				<max-size>50</max-size>
+                <nullable>false</nullable>
+			</column>
+			<column name="EMP_EMAIL_ID">
+				<data-type>CHAR</data-type>
+				<max-size>100</max-size>
+                <nullable>false</nullable>
+			</column>
+		</columns>
+		<primary-key name="BHARATH_EMPLOYEE_CONTAINS_TEMPLATE_PK">
+			<primary-key-column>EMPLOYEE_ID</primary-key-column>
+		</primary-key>
+    </table>
+	<table createtable="true" name="BHARATH_DEPARTMENT_CONTAINS_TEMPLATE" system="false" template="false">
+		<columns>
+			<column name="DEPARTMENT_ID">
+				<data-type>INTEGER</data-type>
+				<nullable>false</nullable>
+                <uniquevalue-generation>
+					<generator-name>BHARATH_DEPARTMENT_CONTAINS_TEMPLATE.DEPARTMENT_ID</generator-name>
+                </uniquevalue-generation>
+			</column>
+			<column name="DEPARTMENT_NAME">
+				<data-type>CHAR</data-type>
+				<max-size>50</max-size>
+				<nullable>false</nullable>
+			</column>
+		</columns>
+		<primary-key name="BHARATH_DEPARTMENT_CONTAINS_TEMPLATE_PK">
+			<primary-key-column>DEPARTMENT_ID</primary-key-column>
+		</primary-key>
+	</table>
+	<table createtable="true" name="BHARATH_EMP_DEPARTMENT_MAPPING_CONTAINS_TEMPLATE" system="false" template="false">
+		<columns>
+			<column name="DEPARTMENT_ID">
+				<data-type>INTEGER</data-type>
+				<nullable>false</nullable>
+			</column>
+			<column name="EMPLOYEE_ID">
+				<data-type>INTEGER</data-type>
+				<nullable>false</nullable>
+			</column>
+		</columns>
+		<primary-key name="BHARATH_EMP_DEPARTMENT_MAPPING_CONTAINS_TEMPLATE_PK">
+			<primary-key-column>DEPARTMENT_ID</primary-key-column>
+			<primary-key-column>EMPLOYEE_ID</primary-key-column>
+		</primary-key>
+		<foreign-keys>
+			<foreign-key name="BHARATH_EMP_DEPARTMENT_MAPPING_CONTAINS_TEMPLATE_FK1" reference-table-name="BHARATH_DEPARTMENT_CONTAINS_TEMPLATE">
+				<fk-columns>
+					<fk-column>
+						<fk-local-column>DEPARTMENT_ID</fk-local-column>
+						<fk-reference-column>DEPARTMENT_ID</fk-reference-column>
+					</fk-column>
+				</fk-columns>
+				<fk-constraints>ON-DELETE-RESTRICT</fk-constraints>
+			</foreign-key>
+			<foreign-key name="BHARATH_EMP_DEPARTMENT_MAPPING_CONTAINS_TEMPLATE_FK2" reference-table-name="BHARATH_EMPLOYEE_CONTAINS_TEMPLATE">
+				<fk-columns>
+					<fk-column>
+						<fk-local-column>EMPLOYEE_ID</fk-local-column>
+						<fk-reference-column>EMPLOYEE_ID</fk-reference-column>
+					</fk-column>
+				</fk-columns>
+				<fk-constraints>ON-DELETE-RESTRICT</fk-constraints>
+			</foreign-key>
+		</foreign-keys>
+	</table>
+</data-dictionary>

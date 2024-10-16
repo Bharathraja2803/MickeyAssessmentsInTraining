@@ -1,0 +1,88 @@
+Q1.
+GET
+http://localhost:8080/Assessment4Bharath/GetAllDetailsOfEmployeesServlet
+
+Q2.
+POST: 
+http://localhost:8080/Assessment4Bharath/CreateEmployeeLeavesTableServlet
+
+PUT:
+http://localhost:8080/Assessment4Bharath/AlterTableByAddingOptionalLeaveColumnServlet
+
+
+DELETE:
+http://localhost:8080/Assessment4Bharath/DropEmployeeLeavesTableServlet
+
+Q3. 
+POST:
+http://localhost:8080/Assessment4Bharath/AddingDefaultDynamicColumnServlet
+
+POST:
+http://localhost:8080/Assessment4Bharath/AddingDataToDynamicColumn
+
+PUT:
+http://localhost:8080/Assessment4Bharath/ModifyDynamicColumnServlet
+
+POST:
+http://localhost:8080/Assessment4Bharath/AddingDataToDynamicColumn
+
+PUT:
+http://localhost:8080/Assessment4Bharath/UpdatingValuesInDynamicColumn
+
+GET:
+http://localhost:8080/Assessment4Bharath/GetValuesFromDynamicColumnServlet
+
+DELETE:
+http://localhost:8080/Assessment4Bharath/DeleteDynamicColumnServlet
+
+POST:
+http://localhost:8080/Assessment4Bharath/AddingDefaultDynamicColumnServlet
+
+PUT:
+http://localhost:8080/Assessment4Bharath/RenamingDynamicColumnServlet
+
+
+Q4.
+
+POST
+http://localhost:8080/Assessment4Bharath/AddBasicSalaryColumnToEmployeeSalaryMappingTableUsingAlterQueryServlet
+
+PUT
+http://localhost:8080/Assessment4Bharath/ModifyBasicSalaryColumnFromEmployeeSalaryMappingTableUsingAlterQueryServlet
+
+add one new row insert into BHARATH_EMP_SALARYDETAILS values(1, 15000);
+
+DELETE
+http://localhost:8080/Assessment4Bharath/RemoveBasicSalaryColumnFromEmployeeSalaryMappingTableUsingAlterQueryServlet
+
+perform 
+delete from BHARATH_EMP_SALARYDETAILS where employee_id=1;
+delete from bharath_employee where employee_id=1;
+then perform below
+POST
+http://localhost:8080/Assessment4Bharath/AddUniqueKeyToEmailIdInEmployeeTableServlet
+
+try inserting below record
+insert into bharath_employee values(17, 'Yuvaraj Murali', 'murali@gmail.com');
+
+
+DELETE
+http://localhost:8080/Assessment4Bharath/DeleteUniqueKeyForEmailIdInEmployeeTableServlet
+
+try inserting below record
+insert into bharath_employee values(17, 'Yuvaraj Murali', 'murali@gmail.com');
+
+
+GET
+http://localhost:8080/Assessment4Bharath/GettingEmployeeNameWhoseEmailIdIsGmailAndEmployeeIdTwelveUnionServlet
+
+GET
+http://localhost:8080/Assessment4Bharath/GettingEmployeeWorkingInSalesAndPurchaseUsingJoinServlet
+
+GET
+http://localhost:8080/Assessment4Bharath/GetEmployeeCountPerDepartmentSelectQueryServlet
+
+Q5.
+
+POST
+http://localhost:8080/Assessment4Bharath/CreateTemplateInstanceTableServlet

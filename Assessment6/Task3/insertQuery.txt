@@ -1,0 +1,16 @@
+insert into bharath_employee_dynamic (employee_id, emp_name, emp_email_id) values (10, 'bharath', 'bharath@gmail.com');
+insert into bharath_employee_dynamic (employee_id, emp_name, emp_email_id) values (11, 'nandha', 'nandha@gmail.com');
+insert into bharath_employee_dynamic (employee_id, emp_name, emp_email_id) values (12, 'vijay', 'vijay@gmail.com');
+insert into bharath_employee_dynamic (employee_id, emp_name, emp_email_id) values (13, 'vinay', 'vinay@gmail.com');
+insert into bharath_employee_dynamic (employee_id, emp_name, emp_email_id) values (14, 'kishore', 'kishore@gmail.com');
+insert into bharath_employee_dynamic (employee_id, emp_name, emp_email_id) values (15, 'prashanth', 'prashanth@gmail.com');
+insert into bharath_employee_dynamic (employee_id, emp_name, emp_email_id) values (16, 'murali', 'murali@gmail.com');
+
+
+insert into bharath_emp_salarydetails_dynamic (employee_id, salary) values (10, 12000);
+insert into bharath_emp_salarydetails_dynamic (employee_id, salary) values (11, 14000);
+insert into bharath_emp_salarydetails_dynamic (employee_id, salary) values (12, 13000);
+insert into bharath_emp_salarydetails_dynamic (employee_id, salary) values (13, 15000);
+insert into bharath_emp_salarydetails_dynamic (employee_id, salary) values (14, 17500);
+insert into bharath_emp_salarydetails_dynamic (employee_id, salary) values (15, 13200);
+insert into bharath_emp_salarydetails_dynamic (employee_id, salary) values (16, 17000);

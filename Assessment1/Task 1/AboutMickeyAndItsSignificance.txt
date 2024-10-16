@@ -1,0 +1,19 @@
+What is Mickey (Micro Kernel)
+	i -> Mickey is a Zoho framework product which provides an easy-to-use framework for developing web based applications using relational databases. 
+	ii. -> The Name is derived from Micro Kernel.
+	iii. -> It provides mechanism and service needed for developing web application.
+	iv. -> All products in Zoho have mickey as the base which interacts between the underlying database and the java application.
+	v. -> Mickey bundles TOMCAT along with it.  TOMCAT takes care of the web-access and Mickey takes care of the DB access. 
+	vi. -> Mickey is the core server platform (framework) over which the applications will be developed upon.
+	vii. -> We can achieve code reusability and uniformity in all application by using Mickey.
+	viii. -> The core modules of Mickey are 
+		a -> Persistence
+		b -> Task Engine
+		c -> Custom View Framework
+		d -> Security
+		e -> Update Manager
+
+Significance of Mickey:
+	i. -> It protect the application from various type of security attacks such as SQL Injection attack, XSS attack, etc.
+	ii. -> It provides a kind of abstraction and prevent unauthorized access to database.
+	iii. -> It is used to achieve code reusability and uniformity in all application.

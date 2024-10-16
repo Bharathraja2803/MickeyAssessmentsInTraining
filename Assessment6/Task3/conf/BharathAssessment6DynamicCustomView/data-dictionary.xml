@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE data-dictionary SYSTEM "data-dictionary.dtd">
+<data-dictionary name="BharathAssessment6DynamicCustomView">
+		<table createtable="true" name="BHARATH_EMPLOYEE_DYNAMIC" system="false" template="false">
+		<columns>
+			<column name="EMPLOYEE_ID">
+				<data-type>INTEGER</data-type>
+                <nullable>false</nullable>
+                <uniquevalue-generation>
+					<generator-name>BHARATH_EMPLOYEE_DYNAMIC.EMPLOYEE_ID</generator-name>
+                </uniquevalue-generation>
+			</column>
+            <column name="EMP_NAME">
+				<data-type>CHAR</data-type>
+				<max-size>50</max-size>
+                <nullable>false</nullable>
+			</column>
+			<column name="EMP_EMAIL_ID">
+				<data-type>CHAR</data-type>
+				<max-size>100</max-size>
+                <nullable>false</nullable>
+			</column>
+		</columns>
+		<primary-key name="BHARATH_EMPLOYEE_DYNAMIC_PK">
+			<primary-key-column>EMPLOYEE_ID</primary-key-column>
+		</primary-key>
+    </table>
+	<table createtable="true" name="BHARATH_EMP_SALARYDETAILS_DYNAMIC" system="false" template="false">
+		<columns>
+			<column name="EMPLOYEE_ID">
+				<data-type>INTEGER</data-type>
+			<nullable>false</nullable>
+            </column>
+			<column name="SALARY">
+				<data-type>INTEGER</data-type>
+				<nullable>false</nullable>
+			</column>
+		</columns>
+		<primary-key name="BHARATH_EMP_SALARYDETAILS_DYNAMIC_PK">
+			<primary-key-column>EMPLOYEE_ID</primary-key-column>
+		</primary-key>
+		<foreign-keys>
+			<foreign-key name="BHARATH_EMP_SALARYDETAILS_DYNAMIC_FK" reference-table-name="BHARATH_EMPLOYEE_DYNAMIC">
+				<fk-columns>
+					<fk-column>
+						<fk-local-column>EMPLOYEE_ID</fk-local-column>
+						<fk-reference-column>EMPLOYEE_ID</fk-reference-column>
+					</fk-column>
+				</fk-columns>
+				<fk-constraints>ON-DELETE-RESTRICT</fk-constraints>
+			</foreign-key>
+		</foreign-keys>
+	</table>
+</data-dictionary>

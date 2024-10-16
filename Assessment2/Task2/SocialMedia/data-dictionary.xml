@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE data-dictionary SYSTEM "data-dictionary.dtd">
+<data-dictionary name="SocialMedia">
+	<table createtable="true" name="Users" system="false" template="false">
+		<columns>
+			<column name="USER_ID">
+				<data-type>INTEGER</data-type>
+                <nullable>false</nullable>
+                <uniquevalue-generation>
+					<generator-name>Users.USER_ID</generator-name>
+                </uniquevalue-generation>
+			</column>
+            <column name="USER_NAME">
+				<data-type>CHAR</data-type>
+				<max-size>50</max-size>
+                <nullable>false</nullable>
+			</column>
+			<column name="PASSWORD">
+				<data-type>CHAR</data-type>
+				<max-size>100</max-size>
+                <nullable>false</nullable>
+			</column>
+			<column name="BIRTHDATE">
+				<data-type>DATE</data-type>
+                <nullable>false</nullable>
+			</column>
+			<column name="EMAIL_ID">
+				<data-type>CHAR</data-type>
+				<max-size>100</max-size>
+                <nullable>false</nullable>
+			</column>
+			<column name="ROLE">
+				<data-type>CHAR</data-type>
+				<max-size>10</max-size>
+                <nullable>false</nullable>
+				<allowed-values>
+					<value>admin</value>
+					<value>user</value>
+				</allowed-values>
+			</column>
+			<column name="SIGNUP_DATE">
+				<data-type>DATE</data-type>
+                <nullable>false</nullable>
+			</column>
+			<column name="SIGNUP_TIME">
+				<data-type>TIME</data-type>
+                <nullable>false</nullable>
+			</column>
+			<column name="IS_BLOCKED">
+				<data-type>CHAR</data-type>
+				<max-size>1</max-size>
+				<default-value>n</default-value>
+				<nullable>false</nullable>
+				<allowed-values>
+					<value>y</value>
+					<value>n</value>
+				</allowed-values>
+			</column>
+		</columns>
+		<primary-key name="Users_PK">
+			<primary-key-column>USER_ID</primary-key-column>
+		</primary-key>
+		<unique-keys>
+			<unique-key name="Users_UK">
+				<unique-key-column>EMAIL_ID</unique-key-column>
+			</unique-key>
+		</unique-keys>
+    </table>
+	<table createtable="true" name="Post" system="false" template="false">
+		<columns>
+			<column name="POST_ID">
+				<data-type>INTEGER</data-type>
+				<nullable>false</nullable>
+                <uniquevalue-generation>
+					<generator-name>Post.POST_ID</generator-name>
+                </uniquevalue-generation>
+			</column>
+			<column name="USER_ID">
+				<data-type>INTEGER</data-type>
+				<nullable>false</nullable>
+			</column>
+			<column name="POSTED_DATE">
+				<data-type>DATE</data-type>
+				<nullable>false</nullable>
+			</column>
+			<column name="POSTED_TIME">
+				<data-type>TIME</data-type>
+				<nullable>false</nullable>
+			</column>
+			<column name="POST_CONTENT">
+				<data-type>CHAR</data-type>
+				<max-size>1000</max-size>
+				<nullable>false</nullable>
+			</column>
+		</columns>
+		<primary-key name="Post_PK">
+			<primary-key-column>POST_ID</primary-key-column>
+		</primary-key>
+		<foreign-keys>
+			<foreign-key name="Post_FK" reference-table-name="Users">
+				<fk-columns>
+					<fk-column>
+						<fk-local-column>USER_ID</fk-local-column>
+						<fk-reference-column>USER_ID</fk-reference-column>
+					</fk-column>
+				</fk-columns>
+				<fk-constraints>ON-DELETE-RESTRICT</fk-constraints>
+			</foreign-key>
+		</foreign-keys>
+	</table>
+	<table createtable="true" name="Follower" system="false" template="false">
+		<columns>
+			<column name="USER_ID">
+				<data-type>INTEGER</data-type>
+				<nullable>false</nullable>
+			</column>
+			<column name="FOLLOWING_USER_ID">
+				<data-type>INTEGER</data-type>
+				<nullable>false</nullable>
+			</column>
+		</columns>
+		<primary-key name="Follower_PK">
+			<primary-key-column>USER_ID</primary-key-column>
+			<primary-key-column>FOLLOWING_USER_ID</primary-key-column>
+		</primary-key>
+		<foreign-keys>
+			<foreign-key name="Follower_FK1" reference-table-name="Users">
+				<fk-columns>
+					<fk-column>
+						<fk-local-column>USER_ID</fk-local-column>
+						<fk-reference-column>USER_ID</fk-reference-column>
+					</fk-column>
+				</fk-columns>
+				<fk-constraints>ON-DELETE-RESTRICT</fk-constraints>
+			</foreign-key>
+			<foreign-key name="Follower_FK2" reference-table-name="Users">
+				<fk-columns>
+					<fk-column>
+						<fk-local-column>FOLLOWING_USER_ID</fk-local-column>
+						<fk-reference-column>USER_ID</fk-reference-column>
+					</fk-column>
+				</fk-columns>
+				<fk-constraints>ON-DELETE-RESTRICT</fk-constraints>
+			</foreign-key>
+		</foreign-keys>
+	</table>
+	<table createtable="true" name="Comment" system="false" template="false">
+		<columns>
+			<column name="COMMENT_ID">
+				<data-type>INTEGER</data-type>
+				<nullable>false</nullable>
+                <uniquevalue-generation>
+					<generator-name>Comment.COMMENT_ID</generator-name>
+                </uniquevalue-generation>
+			</column>
+			<column name="COMMENT_DATE">
+				<data-type>DATE</data-type>
+				<nullable>false</nullable>
+			</column>
+			<column name="COMMENT_TIME">
+				<data-type>TIME</data-type>
+				<nullable>false</nullable>
+			</column>
+			<column name="COMMENT_USER_ID">
+				<data-type>INTEGER</data-type>
+				<nullable>false</nullable>
+			</column>
+			<column name="POST_ID">
+				<data-type>INTEGER</data-type>
+				<nullable>false</nullable>
+			</column>
+			<column name="COMMENT_TEXT">
+				<data-type>CHAR</data-type>
+				<max-size>1000</max-size>
+				<nullable>false</nullable>
+			</column>
+		</columns>
+		<primary-key name="Comment_PK">
+			<primary-key-column>COMMENT_ID</primary-key-column>
+		</primary-key>
+		<foreign-keys>
+			<foreign-key name="Comment_FK1" reference-table-name="Post">
+				<fk-columns>
+					<fk-column>
+						<fk-local-column>POST_ID</fk-local-column>
+						<fk-reference-column>POST_ID</fk-reference-column>
+					</fk-column>
+				</fk-columns>
+				<fk-constraints>ON-DELETE-RESTRICT</fk-constraints>
+			</foreign-key>
+			<foreign-key name="Comment_FK2" reference-table-name="Users">
+				<fk-columns>
+					<fk-column>
+						<fk-local-column>COMMENT_USER_ID</fk-local-column>
+						<fk-reference-column>USER_ID</fk-reference-column>
+					</fk-column>
+				</fk-columns>
+				<fk-constraints>ON-DELETE-RESTRICT</fk-constraints>
+			</foreign-key>
+		</foreign-keys>
+	</table>
+	<table createtable="true" name="Likes" system="false" template="false">
+		<columns>
+			<column name="LIKE_ID">
+				<data-type>INTEGER</data-type>
+				<nullable>false</nullable>
+                <uniquevalue-generation>
+					<generator-name>Likes.LIKE_ID</generator-name>
+                </uniquevalue-generation>
+			</column>
+			<column name="USER_ID">
+				<data-type>INTEGER</data-type>
+				<nullable>false</nullable>
+			</column>
+			<column name="POST_ID">
+				<data-type>INTEGER</data-type>
+				<nullable>false</nullable>
+			</column>
+			<column name="LIKE_DATE">
+				<data-type>DATE</data-type>
+				<nullable>false</nullable>
+			</column>
+			<column name="LIKE_TIME">
+				<data-type>TIME</data-type>
+				<nullable>false</nullable>
+			</column>
+		</columns>
+		<primary-key name="Likes_PK">
+			<primary-key-column>LIKE_ID</primary-key-column>
+		</primary-key>
+		<foreign-keys>
+			<foreign-key name="Likes_FK1" reference-table-name="Post">
+				<fk-columns>
+					<fk-column>
+						<fk-local-column>POST_ID</fk-local-column>
+						<fk-reference-column>POST_ID</fk-reference-column>
+					</fk-column>
+				</fk-columns>
+				<fk-constraints>ON-DELETE-RESTRICT</fk-constraints>
+			</foreign-key>
+			<foreign-key name="Likes_FK2" reference-table-name="Users">
+				<fk-columns>
+					<fk-column>
+						<fk-local-column>USER_ID</fk-local-column>
+						<fk-reference-column>USER_ID</fk-reference-column>
+					</fk-column>
+				</fk-columns>
+				<fk-constraints>ON-DELETE-RESTRICT</fk-constraints>
+			</foreign-key>
+		</foreign-keys>
+	</table>
+</data-dictionary>

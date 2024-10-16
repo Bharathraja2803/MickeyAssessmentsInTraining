@@ -1,0 +1,36 @@
+Users <table>
+	USER_ID <primarykey> <uniquevalue-generation> - User_id can be generated automatically
+	USER_NAME <nullable=false> - this column can't be null
+	PASSWORD <nullable=false>-> This column should be not null.
+	BIRTHDATE <nullable=false> - This column should be not null
+	EMAIL_ID <nullable=false> <unique-key> - This column should be not null and values of this column should be unique.
+	ROLE <nullable=false> <allowed-values> - This column should be not null and it allows only admin and user values.
+	SIGNUP_DATE <nullable=false> - This column should be not null
+	SIGNUP_TIME <nullable=false> - This column should be not null
+	IS_BLOCKED <nullable=false> <default-value=n> <allowed-values> - This column should be not null and this should allow only n and y values.
+
+Follower <table>
+	USER_ID <nullable=false> <primarykey> <foreign-key=Users.USER_ID> - This column should be not null and this is the part of primary key and it is referencing to USER_ID column in Users table.
+	FOLLOWING_USER_ID <nullable=false> <primary-key> <foreign-key=Users.USER_ID> - This column should be not null and this is the part of primary key and it is referencing to USER_ID column in Users table.
+
+Comment <table>
+	COMMENT_ID <primary-key> <uniquevalue-generation> - This is the primary key and which is auto generated.
+	COMMENT_DATE <nullable=false> - This column should be not null
+	COMMENT_TIME <nullable=false> - This column should be not null
+	COMMENT_USER_ID <nullable=false> <foreign-key=Users.USER_ID> - This column should be not null and reference to USER_ID in Users table.
+	POST_ID <nullable=false> <foreign-key=Post.POST_ID> - This column should be not null and reference to POST_ID in Post table.
+	COMMENT_TEXT <nullable=false> - This column should be not null
+
+Likes <table>
+	LIKE_ID <primary-key> <uniquevalue-generation> - This is the primary key and which is auto generated.
+	USER_ID <nullable=false> <foreign-key=Users.USER_ID> - This column should be not null and reference to USER_ID in Users table.
+	PODT_ID <nullable=false> <foreign-key=Post.POST_ID> - This column should be not null and reference to POST_ID in Post table.
+	LIKE_DATE <nullable=false> - This column should be not null
+	LIKE_TIME <nullable=false> - This column should be not null
+
+Post <table>
+	POST_ID <primary-key> <uniquevalue-generation> - This is the primary key and which is auto generated.
+	USER_ID <nullable=false> <foreign-key=Users.USER_ID> - This column should be not null and reference to USER_ID in Users table.
+	POSTED_DATE <nullable=false> - This column should be not null
+	POSTED_TIME <nullable=false> - This column should be not null
+	POST_CONTENT <nullable=false> - This column should be not null

@@ -1,0 +1,20 @@
+insert into bharath_employee_contains_template (employee_id, emp_name, emp_email_id) values (10, 'bharath', 'bharath@gmail.com');
+insert into bharath_employee_contains_template (employee_id, emp_name, emp_email_id) values (11, 'nandha', 'nandha@gmail.com');
+insert into bharath_employee_contains_template (employee_id, emp_name, emp_email_id) values (12, 'vijay', 'vijay@gmail.com');
+insert into bharath_employee_contains_template (employee_id, emp_name, emp_email_id) values (13, 'vinay', 'vinay@gmail.com');
+insert into bharath_employee_contains_template (employee_id, emp_name, emp_email_id) values (14, 'kishore', 'kishore@gmail.com');
+insert into bharath_employee_contains_template (employee_id, emp_name, emp_email_id) values (15, 'prashanth', 'prashanth@gmail.com');
+insert into bharath_employee_contains_template (employee_id, emp_name, emp_email_id) values (16, 'murali', 'murali@gmail.com');
+
+
+insert into bharath_department_contains_template (department_id, department_name) values (100, 'Sales');
+insert into bharath_department_contains_template (department_id, department_name) values (101, 'Purchase');
+insert into bharath_department_contains_template (department_id, department_name) values (102, 'Marketing');
+
+insert into bharath_emp_department_mapping_contains_template (department_id, employee_id) values (101, 10);
+insert into bharath_emp_department_mapping_contains_template (department_id, employee_id) values (100, 11);
+insert into bharath_emp_department_mapping_contains_template (department_id, employee_id) values (102, 12);
+insert into bharath_emp_department_mapping_contains_template (department_id, employee_id) values (100, 13);
+insert into bharath_emp_department_mapping_contains_template (department_id, employee_id) values (101, 14);
+insert into bharath_emp_department_mapping_contains_template (department_id, employee_id) values (101, 15);
+insert into bharath_emp_department_mapping_contains_template (department_id, employee_id) values (102, 16);

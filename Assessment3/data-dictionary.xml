@@ -1,0 +1,108 @@
+<!DOCTYPE data-dictionary SYSTEM "data-dictionary.dtd">
+<data-dictionary name="BharathAssessment3">
+	<table name="BHARATH_EMPLOYEE">
+		<columns>
+			<column name="BHARATH_EMPLOYEE_ID">
+				<data-type>INTEGER</data-type>
+                <uniquevalue-generation>
+					<generator-name>BHARATH_EMPLOYEE.BHARATH_EMPLOYEE_ID</generator-name>
+                </uniquevalue-generation>
+				<nullable>false</nullable>
+			</column>
+            <column name="BHARATH_EMP_NAME">
+				<data-type>CHAR</data-type>
+				<max-size>10</max-size>
+                <nullable>false</nullable>
+			</column>
+			<column name="BHARATH_EMP_EMAIL_ID">
+				<data-type>CHAR</data-type>
+				<max-size>15</max-size>
+                <nullable>false</nullable>
+			</column>
+		</columns>
+		<primary-key name="BHARATH_EMPLOYEE_PK">
+			<primary-key-column>BHARATH_EMPLOYEE_ID</primary-key-column>
+		</primary-key>
+    </table>
+	<table name="BHARATH_DEPARTMENT">
+		<columns>
+			<column name="BHARATH_DEPARTMENT_ID">
+				<data-type>INTEGER</data-type>
+				<uniquevalue-generation>
+					<generator-name>BHARATH_DEPARTMENT.BHARATH_DEPARTMENT_ID</generator-name>
+                </uniquevalue-generation>
+				<nullable>false</nullable>
+			</column>
+			<column name="BHARATH_DEPARTMENT_NAME">
+				<data-type>CHAR</data-type>
+				<max-size>10</max-size>
+				<nullable>false</nullable>
+			</column>
+		</columns>
+		<primary-key name="BHARATH_DEPARTMENT_PK">
+			<primary-key-column>BHARATH_DEPARTMENT_ID</primary-key-column>
+		</primary-key>
+	</table>
+	<table name="BHARATH_EMP_DEPARTMENT_MAPPING">
+		<columns>
+			<column name="BHARATH_DEPARTMENT_ID">
+				<data-type>INTEGER</data-type>
+				<nullable>false</nullable>
+			</column>
+			<column name="BHARATH_EMPLOYEE_ID">
+				<data-type>INTEGER</data-type>
+				<nullable>false</nullable>
+			</column>
+		</columns>
+		<primary-key name="BHARATH_EMP_DEPARTMENT_MAPPING_PK">
+			<primary-key-column>BHARATH_DEPARTMENT_ID</primary-key-column>
+			<primary-key-column>BHARATH_EMPLOYEE_ID</primary-key-column>
+		</primary-key>
+		<foreign-keys>
+			<foreign-key name="BHARATH_EMP_DEPARTMENT_MAPPING_FK1" reference-table-name="BHARATH_DEPARTMENT">
+				<fk-columns>
+					<fk-column>
+						<fk-local-column>BHARATH_DEPARTMENT_ID</fk-local-column>
+						<fk-reference-column>BHARATH_DEPARTMENT_ID</fk-reference-column>
+					</fk-column>
+				</fk-columns>
+				<fk-constraints>ON-DELETE-RESTRICT</fk-constraints>
+			</foreign-key>
+			<foreign-key name="BHARATH_EMP_DEPARTMENT_MAPPING_FK2" reference-table-name="BHARATH_EMPLOYEE">
+				<fk-columns>
+					<fk-column>
+						<fk-local-column>BHARATH_EMPLOYEE_ID</fk-local-column>
+						<fk-reference-column>BHARATH_EMPLOYEE_ID</fk-reference-column>
+					</fk-column>
+				</fk-columns>
+				<fk-constraints>ON-DELETE-RESTRICT</fk-constraints>
+			</foreign-key>
+		</foreign-keys>
+	</table>
+	<table name="BHARATH_EMP_SALARYDETAILS">
+		<columns>
+			<column name="BHARATH_EMPLOYEE_ID">
+				<data-type>INTEGER</data-type>
+				<nullable>false</nullable>
+			</column>
+			<column name="BHARATH_SALARY">
+				<data-type>INTEGER</data-type>
+				<nullable>false</nullable>
+			</column>
+		</columns>
+		<primary-key name="BHARATH_EMP_SALARYDETAILS_PK">
+			<primary-key-column>BHARATH_EMPLOYEE_ID</primary-key-column>
+		</primary-key>
+		<foreign-keys>
+			<foreign-key name="BHARATH_EMP_SALARYDETAILS_FK" reference-table-name="BHARATH_EMPLOYEE">
+				<fk-columns>
+					<fk-column>
+						<fk-local-column>BHARATH_EMPLOYEE_ID</fk-local-column>
+						<fk-reference-column>BHARATH_EMPLOYEE_ID</fk-reference-column>
+					</fk-column>
+				</fk-columns>
+				<fk-constraints>ON-DELETE-RESTRICT</fk-constraints>
+			</foreign-key>
+		</foreign-keys>
+	</table>
+</data-dictionary>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="no"?>
+<generatedXML>
+  <Schedule schedule_id="Schedule:schedule_id:TestSample" schedule_name="SampleTaskPeriodicXml">
+  <Scheduled_Task retry_handler="com.adventnet.taskengine.internal.DefaultScheduleRetryHandler" task_id="TaskEngine_Task:task_id:SampleTaskPeriodicXml">
+	<ScheduledTask_Retry retry_count="5" retry_factor="5" retry_time_period="10"/>
+	  <Task_Input instance_id="Task_Input:instance_id:InstanceSample" pool_id="1">
+	  </Task_Input>
+	</Scheduled_Task>
+		<Periodic start_date="2024-10-13 00:00:00.0" end_date="2024-10-20 01:00:00.0" time_period="10" unit_of_time="seconds"/>
+  </Schedule>
+  <TaskEngine_Task class_name="com.adventnet.taskengine.SampleTaskPeriodicXml" task_id="TaskEngine_Task:task_id:SampleTaskPeriodicXml" task_name="SampleTaskPeriodicXml"/>
+</generatedXML>
