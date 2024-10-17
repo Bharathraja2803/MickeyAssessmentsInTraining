@@ -19,7 +19,7 @@
             <SelectColumn columnalias="DEPARTMENT_NAME" columnindex="3" columnname="DEPARTMENT_NAME"/>
         </SelectTable>
         <Criteria criteriaid="Criteria:criteriaid:1" logicalrepresentation="1">
-            <RelationalCriteria relationalcriteriaid="1" tablealias="BHARATH_EMP_DEPARTMENT_MAPPING_CONTAINS_TEMPLATE" columnname="DEPARTMENT_ID" comparator="0" value="100"/>
+            <RelationalCriteria relationalcriteriaid="1" tablealias="BHARATH_EMP_DEPARTMENT_MAPPING_CONTAINS_TEMPLATE" columnname="DEPARTMENT_ID" comparator="0" value="${DEPARTMENT_ID}"/>
         </Criteria>
         <CustomViewConfiguration cvid="CustomViewConfiguration:cvid:EmployeeDepartment100CV" cvname="EmployeeDepartment100CV"/>
     </SelectQuery>

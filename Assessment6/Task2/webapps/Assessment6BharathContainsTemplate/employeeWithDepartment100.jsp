@@ -21,7 +21,7 @@
         CustomViewRequest cvRequest = new CustomViewRequest("EmployeeDepartment100CV");
 
         HashMap valueMap = new HashMap();
-        valueMap.put("DEPARTMENT_ID", "BHARATH_EMPLOYEE_CONTAINS_TEMPLATE");
+        valueMap.put("DEPARTMENT_ID", 100);
         ServiceConfiguration serviceConfiguration = new SQTemplateValuesServiceConfiguration(valueMap);
         cvRequest.putServiceConfiguration(serviceConfiguration);
 
